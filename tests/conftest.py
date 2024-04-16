@@ -9,14 +9,14 @@ from selenium.webdriver import FirefoxOptions
 from dotenv import load_dotenv
 from utils import attach
 
-DEFAULT_VERSION = '100.0'
+DEFAULT_VERSION = '122.0'
 
 
 @allure.step('Select browser version')
 def pytest_addoption(parser):
     parser.addoption('--browser_name', action='store', default='chrome', help="Choose browser name.")
-    parser.addoption('--browser_version', default='100.0',
-                     help='Choose browser version. For Chrome: 99.0 or 100.0. For Firefox: 97.0 or 98.0.')
+    parser.addoption('--browser_version', default='122.0',
+                     help='Choose browser version. For Chrome: 99.0 or 100.0 or 122.0. For Firefox: 97.0 or 98.0.')
 
 
 @allure.step('Load env')
