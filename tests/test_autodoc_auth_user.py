@@ -21,3 +21,4 @@ def test_authorization_registered_user():
         password=os.getenv('USER_PASSWORD')
     )
     main_page.authorization_registered_user(registered_user)
+    
