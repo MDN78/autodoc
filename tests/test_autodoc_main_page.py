@@ -1,5 +1,4 @@
 import os
-
 import allure
 
 from autodoc_project.data.cars import Car
