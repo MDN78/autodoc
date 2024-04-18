@@ -30,7 +30,7 @@ class MainPage:
         browser.element('#Password').should(be.blank).send_keys(user.password)
         browser.element('.icon.fa').click()
         browser.element('#submit_logon_page').click()
-        browser.element('#errorMessage').should(have.exact_text('Неудалось авторизоваться.'))
+        browser.element('#errorMessage').should(have.exact_text('Не удалось авторизоваться.'))
 
     @step
     @allure.step("Checking authorization form")
