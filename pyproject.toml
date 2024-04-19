@@ -6,11 +6,13 @@ authors = ["Dimitri Maksimov <dmitry-maksimov@yandex.ru>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "3.12"
+python = "^3.12"
 selene = "2.0.0rc8"
 python-dotenv = "1.0.1"
 pytest = "8.0.1"
 allure-pytest = "2.13.5"
+requests = "2.31.0"
+jsonschema = "4.21.1"
 
 [tool.pytest.ini_options]
 addopts = [
@@ -18,6 +20,11 @@ addopts = [
     "--clean-alluredir",
     "-s",
     "-v",
+]
+
+testpaths = [
+    "tests/api",
+    "tests/ui",
 ]
 
 [build-system]

@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "parentId": {
+      "type": "integer"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "login": {
+      "type": "string"
+    },
+    "status": {
+      "type": "integer"
+    },
+    "shoppingCartItemsCount": {
+      "type": "integer"
+    },
+    "vinRequestsItemsCount": {
+      "type": "integer"
+    },
+    "cityId": {
+      "type": "integer"
+    },
+    "latitude": {
+      "type": "integer"
+    },
+    "longitude": {
+      "type": "integer"
+    },
+    "contractDate": {
+      "type": "string"
+    },
+    "discountTypeId": {
+      "type": "integer"
+    },
+    "haveSubClients": {
+      "type": "boolean"
+    },
+    "currentAccessLevel": {
+      "type": "integer"
+    },
+    "domainType": {
+      "type": "string"
+    },
+    "accessLevels": {
+      "type": "array",
+      "items": {
+        "items": {}
+      }
+    },
+    "relatedProfiles": {
+      "type": "array",
+      "items": {
+        "items": {}
+      }
+    },
+    "isTestEnviroment": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "parentId",
+    "id",
+    "login",
+    "status",
+    "shoppingCartItemsCount",
+    "vinRequestsItemsCount",
+    "cityId",
+    "latitude",
+    "longitude",
+    "contractDate",
+    "discountTypeId",
+    "haveSubClients",
+    "currentAccessLevel",
+    "domainType",
+    "accessLevels",
+    "relatedProfiles",
+    "isTestEnviroment"
+  ]
+}
