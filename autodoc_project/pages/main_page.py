@@ -33,10 +33,20 @@ class MainPage:
         browser.element('#errorMessage').should(have.exact_text('Не удалось авторизоваться.'))
 
     @step
+    @allure.step("Checking authorization")
+    def user_should_be_authorized(self, user):
+        browser.element('#user_info').should(have.exact_text(user))
+
+    @step
     @allure.step("Checking authorization form")
     def registration_form_should_have_exact_visible_text(self):
         browser.element('.registration').click()
         browser.element('.title').should(have.text('Регистрация пользователя'))
+
+    @step
+    @allure.step("Checking balance form")
+    def main_page_auth_user_should_have_exact_visible_text(self):
+        browser.element('.balance-main').should(have.text('Баланс'))
 
     @step
     @allure.step("Search")

@@ -1,7 +1,8 @@
 import json
 import requests
 from jsonschema import validate
-from autodoc_project import resource
+from utils import resource
+
 
 def validator_all_json_scheme(name, url):
     response = requests.get(url=url)

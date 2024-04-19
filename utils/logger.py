@@ -2,7 +2,7 @@ import os
 import types
 import datetime
 
-from autodoc_project import resource
+from utils import resource
 
 
 def humanify(name: str):
