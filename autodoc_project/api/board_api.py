@@ -23,7 +23,6 @@ class BoardApi():
         return my_token
 
     def authorization_user(self, user: User):
-        # get auth token
         payload = {
             'username': user.username,
             'password': user.password,
@@ -57,10 +56,7 @@ class BoardApi():
         head = {
             'authorization': f'Bearer {my_token}'
         }
-        # payload = {
-        #     "manufacturerName": item,
-        #     "partNumber": number
-        # }
+
         payload = {
             "directionToManufacturerId": 0,
             "quantity": 1,
@@ -80,8 +76,8 @@ class BoardApi():
             "priceType": 1
         }
         response = requests.post(url, headers=head, data=payload)
-        print(response.text)
-
+        status_code = response.status_code
+        assert status_code == 204
 
     def clear_cart(self, my_token):
         payload = {}
@@ -92,7 +88,6 @@ class BoardApi():
         response = requests.delete(url, headers=head, data=payload)
         status_code = response.status_code
         assert status_code == 204
-
 
     def search_by_vin_number(self, vin, my_token):
         url = f'https://catalogoriginal.autodoc.ru/api/catalogs/original/cars/{vin}/modifications'
