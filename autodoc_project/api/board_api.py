@@ -94,4 +94,18 @@ class BoardApi():
         assert status_code == 204
 
 
+    def search_by_vin_number(self, vin, my_token):
+        url = f'https://catalogoriginal.autodoc.ru/api/catalogs/original/cars/{vin}/modifications'
+        payload = {}
+        head = {
+            'authorization': f'Bearer {my_token}'
+        }
+        response = requests.get(url=url, headers=head, data=payload)
+        status_code = response.status_code
+        assert status_code == 200
+        manufacturer = response.json()["commonAttributes"][2]['value']
+        model = response.json()["commonAttributes"][6]['value']
+        return [manufacturer, model]
+
+
 board_api = BoardApi()

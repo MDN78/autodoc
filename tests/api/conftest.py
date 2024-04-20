@@ -1,6 +1,4 @@
-import os
 import pytest
-import requests
 from selene import browser
 from autodoc_project.api.board_api import board_api
 
@@ -17,4 +15,3 @@ def auth_driver():
     yield
 
     browser.quit()
-

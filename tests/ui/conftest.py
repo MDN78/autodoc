@@ -1,6 +1,7 @@
 import os
 import pytest
 from selene import browser
+from autodoc_project.api.board_api import board_api
 from selenium import webdriver
 from selenium.webdriver import ChromeOptions
 import allure
