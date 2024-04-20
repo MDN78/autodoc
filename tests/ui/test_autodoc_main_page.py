@@ -5,7 +5,7 @@ from autodoc_project.data.cars import Car
 from allure_commons.types import Severity
 from autodoc_project.pages.main_page import main_page
 
-@pytest.mark.skip
+# @pytest.mark.skip
 class TestMainPage:
 
     @allure.tag('Autodoc')
@@ -47,6 +47,8 @@ class TestMainPage:
     def test_search_by_vin_number(self):
         main_page.open()
         current_car = Car(
-            vin=os.getenv('VIN_NUMBER')
+            vin=os.getenv('VIN_NUMBER'),
+            manufacturer='',
+            model=''
         )
         main_page.search_by_vin_number(current_car)

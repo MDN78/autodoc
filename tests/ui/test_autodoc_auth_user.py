@@ -13,7 +13,7 @@ from autodoc_project.pages.main_page import main_page
 @allure.feature('Authorization')
 @allure.story('Auth registered user')
 @allure.link('https://www.autodoc.ru/', name='Autodoc.ru')
-@pytest.mark.skip
+# @pytest.mark.skip
 def test_authorization_registered_user():
     main_page.open()
     registered_user = User(
