@@ -45,8 +45,8 @@ class MainPage:
 
     @step
     @allure.step("Checking balance form")
-    def main_page_auth_user_should_have_exact_visible_text(self):
-        browser.element('.balance-main').should(have.text('Баланс'))
+    def main_page_auth_user_should_have_exact_visible_text(self, name):
+        browser.element('.balance-main').should(have.text(name))
 
     @step
     @allure.step("Search")
@@ -66,6 +66,13 @@ class MainPage:
     @allure.step("Checking phrase")
     def main_page_should_have_visible_text(self):
         browser.element('.homepage-content__title').should(have.exact_text('Запчасти в интернет-магазине Автодок'))
+
+    @step
+    @allure.step("Clear cart")
+    def clear_cart(self):
+        browser.element('.a-icon.a-cart').click()
+        browser.element('.button-red').click()
+        browser.element('.p-element.button-red.p-button.p-component').click()
 
 
 main_page = MainPage()

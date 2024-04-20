@@ -1,9 +1,11 @@
+import os
 import pytest
+import requests
 from selene import browser
 from autodoc_project.api.board_api import board_api
 
 
-@pytest.fixture(scope="function", autouse=True)
+@pytest.fixture
 def auth_driver():
     browser.config.window_width = 1920
     browser.config.window_height = 1080
@@ -15,3 +17,4 @@ def auth_driver():
     yield
 
     browser.quit()
+
