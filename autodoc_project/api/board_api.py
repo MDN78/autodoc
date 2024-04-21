@@ -102,5 +102,16 @@ class BoardApi():
         model = response.json()["commonAttributes"][6]['value']
         return [manufacturer, model]
 
+    def search_by_title_and_number(self, name, number):
+        url = f"https://webapi.autodoc.ru/api/manufacturers/{name}{number}"
+        param = {
+            'showAll': False
+        }
+        response = requests.get(url, params=param)
+        manufacturer = response.json()[0]['manufacturerName']
+        artnumber = response.json()[0]['artNumber']
+
+        return [manufacturer, artnumber]
+
 
 board_api = BoardApi()
