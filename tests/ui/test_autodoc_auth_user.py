@@ -1,10 +1,9 @@
 import os
 
 import allure
-import pytest
 from allure_commons.types import Severity
 from autodoc_project.data.users import User
-from autodoc_project.pages.main_page import main_page
+from autodoc_project.pages.ui_pages.main_page import main_page
 
 
 @allure.tag('Autodoc')
