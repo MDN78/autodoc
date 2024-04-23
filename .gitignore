@@ -6,6 +6,8 @@ __pycache__/
 .idea/
 .venv/
 .env
+.env.bstack
+.env.local_emulator
 #allure
 allure-results
 tests/allure-results
