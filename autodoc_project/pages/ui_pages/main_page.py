@@ -25,7 +25,7 @@ class MainPage:
     @step
     @allure.step('Authorization unregistered user')
     def authorization_unregistered_user(self, user: User):
-        browser.element('#loginInfo').click()
+        browser.element('.cabinet.ng-star-inserted').click()
         browser.element('#Login').should(be.blank).send_keys(user.username)
         browser.element('#Password').should(be.blank).send_keys(user.password)
         browser.element('.icon.fa').click()
