@@ -16,7 +16,7 @@ DEFAULT_VERSION = '122.0'
 def pytest_addoption(parser):
     parser.addoption('--browser_name', action='store', default='chrome', help="Choose browser name.")
     parser.addoption('--browser_version', default='122.0',
-                     help='Choose browser version. For Chrome: 99.0 or 100.0 or 122.0. For Firefox: 97.0 or 98.0.')
+                     help='Choose browser version. For Chrome: 120.0 or 121.0 or 122.0. For Firefox: 122.0. or 123.0')
 
 
 @allure.step('Load env')
