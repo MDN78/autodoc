@@ -6,7 +6,7 @@ from autodoc_project.data.users import User
 
 
 # @pytest.mark.skip
-def test_validate_main_page_json_schema(auth_driver):
+def test_validate_main_page_json_schema():
     url = 'https://webapi.autodoc.ru/api/client/profile'
     validator_all_json_scheme('main_page_json_scheme.json', url)
 
@@ -19,12 +19,12 @@ def test_authorization_user():
     )
     board_api.authorization_user(registered_user)
 
-
-# @pytest.mark.skip
-def test_user_should_be_authorized(auth_driver):
-    main_page.user_should_be_authorized('SPA-49335')
-
-
-# @pytest.mark.skip
-def test_authorized_user_page(auth_driver):
-    main_page.main_page_auth_user_should_have_exact_visible_text('Баланс')
+#
+# # @pytest.mark.skip
+# def test_user_should_be_authorized(auth_driver):
+#     main_page.user_should_be_authorized('SPA-49335')
+#
+#
+# # @pytest.mark.skip
+# def test_authorized_user_page(auth_driver):
+#     main_page.main_page_auth_user_should_have_exact_visible_text('Баланс')

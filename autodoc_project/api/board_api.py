@@ -36,9 +36,6 @@ class BoardApi():
         my_token = response.json()['access_token']
         status_code = response.status_code
         assert status_code == 200
-        # print(status_code)
-        # print(response.text)
-        # print(my_token)
 
         url = 'https://webapi.autodoc.ru/api/client/profile'
         param = {
@@ -48,7 +45,6 @@ class BoardApi():
             'authorization': f'Bearer {my_token}'
         }
         auth = requests.get(url=url, params=param, headers=head)
-        print(auth.text)
 
     def add_item_to_cart(self, item, number, my_token):
         url = 'https://webapi.autodoc.ru/api/shoppingcart/items'
