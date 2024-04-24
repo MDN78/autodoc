@@ -1,5 +1,4 @@
 import os
-
 import allure
 import requests
 from utils.logger import step
@@ -9,7 +8,7 @@ from autodoc_project.data.users import User
 load_dotenv()
 
 
-class BoardApi():
+class BoardApi:
 
     @step
     @allure.step('API: get auth token')
@@ -51,7 +50,7 @@ class BoardApi():
         head = {
             'authorization': f'Bearer {my_token}'
         }
-        auth = requests.get(url=url, params=param, headers=head)
+        requests.get(url=url, params=param, headers=head)
 
     @step
     @allure.step('API: Add item to cart')
