@@ -1,5 +1,8 @@
-import requests
 import os
+
+import allure
+import requests
+from utils.logger import step
 from dotenv import load_dotenv
 from autodoc_project.data.users import User
 
@@ -8,6 +11,8 @@ load_dotenv()
 
 class BoardApi():
 
+    @step
+    @allure.step('API: get auth token')
     def get_auth_token(self):
         payload = {
             'username': os.getenv('USER_LOGIN'),
@@ -22,6 +27,8 @@ class BoardApi():
         my_token = response.json()['access_token']
         return my_token
 
+    @step
+    @allure.step('API: authorization user via API')
     def authorization_user(self, user: User):
         payload = {
             'username': user.username,
@@ -46,6 +53,8 @@ class BoardApi():
         }
         auth = requests.get(url=url, params=param, headers=head)
 
+    @step
+    @allure.step('API: Add item to cart')
     def add_item_to_cart(self, item, number, my_token):
         url = 'https://webapi.autodoc.ru/api/shoppingcart/items'
 
@@ -75,6 +84,8 @@ class BoardApi():
         status_code = response.status_code
         assert status_code == 204
 
+    @step
+    @allure.step('API: Clear cart')
     def clear_cart(self, my_token):
         payload = {}
         head = {
@@ -85,6 +96,8 @@ class BoardApi():
         status_code = response.status_code
         assert status_code == 204
 
+    @step
+    @allure.step('API: Search by vin number')
     def search_by_vin_number(self, vin, my_token):
         url = f'https://catalogoriginal.autodoc.ru/api/catalogs/original/cars/{vin}/modifications'
         payload = {}
@@ -98,6 +111,8 @@ class BoardApi():
         model = response.json()["commonAttributes"][6]['value']
         return [manufacturer, model]
 
+    @step
+    @allure.step('API: Search by title and number')
     def search_by_title_and_number(self, name, number):
         url = f"https://webapi.autodoc.ru/api/manufacturers/{name}{number}"
         param = {

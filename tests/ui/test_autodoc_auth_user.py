@@ -5,11 +5,11 @@ from autodoc_project.data.users import User
 from autodoc_project.pages.ui_pages.main_page import main_page
 
 
-@allure.tag('Autodoc')
+@allure.tag('UI')
+@allure.story('Auth registered user via UI')
+@allure.title('Auth registered user')
 @allure.severity(Severity.NORMAL)
-@allure.label('MDN78', 'User')
-@allure.feature('Authorization')
-@allure.story('Auth registered user')
+@allure.feature('Auth')
 @allure.link('https://www.autodoc.ru/', name='Autodoc.ru')
 def test_authorization_registered_user():
     main_page.open()
@@ -19,12 +19,11 @@ def test_authorization_registered_user():
     )
     main_page.authorization_registered_user(registered_user)
 
-
-@allure.tag('Autodoc')
+@allure.tag('UI')
+@allure.story('Checking authorization user via UI')
+@allure.title('Registered user should be authorized')
 @allure.severity(Severity.NORMAL)
-@allure.label('MDN78', 'User')
-@allure.feature('Authorization')
-@allure.story('Auth registered user')
+@allure.feature('Auth check')
 @allure.link('https://www.autodoc.ru/', name='Autodoc.ru')
 def test_registered_user_should_be_authorized():
     main_page.open()
@@ -36,11 +35,11 @@ def test_registered_user_should_be_authorized():
     main_page.user_should_be_authorized(registered_user.username)
 
 
-@allure.tag('Autodoc')
+@allure.tag('UI')
+@allure.story('Checking authorization user page via UI')
+@allure.title('User page should have text')
 @allure.severity(Severity.NORMAL)
-@allure.label('MDN78', 'User')
-@allure.feature('Authorization')
-@allure.story('Auth registered user')
+@allure.feature('Page check')
 @allure.link('https://www.autodoc.ru/', name='Autodoc.ru')
 def test_authorized_user_page():
     main_page.open()
