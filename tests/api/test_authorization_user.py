@@ -4,7 +4,7 @@ from autodoc_project.api.board_api import board_api
 from autodoc_project.data.users import User
 
 
-def test_validate_main_page_json_schema():
+def test_validate_main_page_json_schema(load_dotenv):
     url = os.getenv('JSON_API_URL')
     validator_all_json_scheme('main_page_json_scheme.json', url)
 
