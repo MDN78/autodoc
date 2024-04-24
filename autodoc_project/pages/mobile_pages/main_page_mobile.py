@@ -1,6 +1,7 @@
 from selene import browser, have
 from appium.webdriver.common.appiumby import AppiumBy
 
+
 class AndroidMainPage:
 
     def authorization(self, login, password):
@@ -8,7 +9,6 @@ class AndroidMainPage:
         browser.element((AppiumBy.ID, 'ru.autodoc.autodocapp:id/password')).send_keys(password)
         browser.element((AppiumBy.ID, 'ru.autodoc.autodocapp:id/signInBtn')).click()
         browser.element((AppiumBy.CLASS_NAME, 'android.widget.TextView')).should(have.text('Главная'))
-
 
     def search_product(self, name, number):
         browser.element((AppiumBy.ID, 'ru.autodoc.autodocapp:id/action_search')).click()
@@ -25,7 +25,8 @@ class AndroidMainPage:
         browser.element((AppiumBy.ID, 'ru.autodoc.autodocapp:id/priceItemPriceClOut')).click()
         browser.element((AppiumBy.ID, 'ru.autodoc.autodocapp:id/floatingButton')).click()
         browser.element((AppiumBy.ID, 'ru.autodoc.autodocapp:id/txtBottomMenuCart')).click()
-        browser.element((AppiumBy.ID, 'ru.autodoc.autodocapp:id/cartItemManAndArt')).should(have.text(f'{name} {number}'))
+        browser.element((AppiumBy.ID, 'ru.autodoc.autodocapp:id/cartItemManAndArt')).should(
+            have.text(f'{name} {number}'))
 
 
 android_main_page = AndroidMainPage()

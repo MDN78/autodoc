@@ -1,12 +1,13 @@
-import pytest
 import os
+import pytest
 from utils import resource
-from utils import attach_mobile
 from selene import browser
 from appium import webdriver
 from dotenv import load_dotenv
+from utils import attach_mobile
 from allure_commons._allure import step
 from appium.options.android import UiAutomator2Options
+
 
 def pytest_addoption(parser):
     parser.addoption('--context', default='local_emulator')

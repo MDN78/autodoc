@@ -1,7 +1,7 @@
 import json
 import requests
-from jsonschema import validate
 from utils import resource
+from jsonschema import validate
 
 
 def validator_all_json_scheme(name, url):

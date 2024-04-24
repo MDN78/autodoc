@@ -1,13 +1,12 @@
 import os
-import pytest
-from selene import browser
-from autodoc_project.api.board_api import board_api
-from selenium import webdriver
-from selenium.webdriver import ChromeOptions
 import allure
-from selenium.webdriver import FirefoxOptions
-from dotenv import load_dotenv
+import pytest
 from utils import attach
+from selene import browser
+from selenium import webdriver
+from dotenv import load_dotenv
+from selenium.webdriver import ChromeOptions
+from selenium.webdriver import FirefoxOptions
 
 DEFAULT_VERSION = '122.0'
 

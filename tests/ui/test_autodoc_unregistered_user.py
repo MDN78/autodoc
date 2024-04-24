@@ -1,10 +1,10 @@
 import os
 import allure
-from autodoc_project.data.users import User
 from allure_commons.types import Severity
+from autodoc_project.data.users import User
 from autodoc_project.pages.ui_pages.main_page import main_page
 
-# @pytest.mark.skip
+
 @allure.tag("Autodoc")
 @allure.severity(Severity.NORMAL)
 @allure.label("MDN78", "User")

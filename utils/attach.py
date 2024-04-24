@@ -1,7 +1,6 @@
 import os
 import allure
 from allure_commons.types import AttachmentType
-
 from utils.resource import path_log_file
 
 

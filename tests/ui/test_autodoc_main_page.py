@@ -1,10 +1,10 @@
 import os
 import allure
-from autodoc_project.data.cars import Car
 from allure_commons.types import Severity
+from autodoc_project.data.cars import Car
 from autodoc_project.pages.ui_pages.main_page import main_page
 
-# @pytest.mark.skip
+
 class TestMainPage:
 
     @allure.tag('Autodoc')

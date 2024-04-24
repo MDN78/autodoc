@@ -1,7 +1,6 @@
 import os
-
-from autodoc_project.api.board_api import board_api
 from autodoc_project.data.cars import Car
+from autodoc_project.api.board_api import board_api
 
 
 def test_search_by_vin_number():
