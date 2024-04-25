@@ -130,6 +130,7 @@ allure serve
 
 После завершения сборки специальный Telegram-бот отправляет сообщение с отчетом.  
 
+![image](assets/telegramm_report.PNG)  
 
 
 
