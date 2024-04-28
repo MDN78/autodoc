@@ -162,6 +162,7 @@ pytest tests/mobile --context=local_emulator
 Отчет позволяет получить детальную информацию по все шагам тестов, включая скриншоты и log - файлы
 
 ![image](assets/allure_report_suits.PNG)
+![image](assets/allure_report_suits.PNG)
 
 ### <img width="3%" title="Allure testops" src="https://github.com/MDN78/MDN78/blob/main/assets/allure_testops.png"> Allure TestOps отчет
 
