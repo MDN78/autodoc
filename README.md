@@ -128,8 +128,8 @@ pytest tests/mobile --context=local_emulator
 ### Параметры сборки:
 
 `ENVIRONMENT` - определение среды сборки, по умолчанию `PROD`  
-`BROWSER NAME` - выбор браузера  
-`BROWSER VERSION` - выбор версии браузера. По умолчанию выбран браузер Chrome, версия 100  
+`BROWSER NAME` - выбор браузера. По умолчанию выбран браузер Chrome. 
+`BROWSER VERSION` - выбор версии браузера. По умолчанию выбран браузер Chrome, версия 122  
 `COMMENT` - комментарий для получателя уведомления в Телеграмм
 
 Версии браузеров, используемые в данной сборке в `Jenkins` и `Selenoid`:
@@ -143,7 +143,7 @@ pytest tests/mobile --context=local_emulator
 
 #### Для запуска автотестов в Jenkins
 
-1. Открыть <a target="_blank" href="https://jenkins.autotests.cloud/job/C10_MDN782007_autodoc_test_project/">проект</a>
+1. Открыть <a target="_blank" href="https://jenkins.autotests.cloud/job/C10_MDN782007_autodoc/">проект</a>
 2. Выбрать пункт `Build with Parameters`
 3. Выбрать браузер
 4. Выбрать версию браузера
