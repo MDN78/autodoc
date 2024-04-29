@@ -17,7 +17,7 @@ appium-python-client = "4.0.0"
 
 [tool.pytest.ini_options]
 addopts = [
-    "--alluredir=allure-results",
+    "--alluredir", "allure-results",
     "--clean-alluredir",
     "-s",
     "-v",
