@@ -78,7 +78,8 @@
 2) Для локального запуска необходимо выполнить команду в терминале с указанием параметров - название и версия браузера:
 
 ```commandline
-pytest ./tests/api & pytest ./tests/ui --browser_name={BROWSER_NAME} --browser_version={BROWSER_VERSION}
+pytest tests\api 
+pytest tests\ui --browser_name=<BROWSER_NAME> --browser_version=<BROWSER_VERSION>
 ```
       
 3) Выполнить запрос на формирование отчета  
