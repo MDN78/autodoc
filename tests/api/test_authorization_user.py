@@ -7,10 +7,10 @@ from utils.validator_json import validator_all_json_scheme
 
 
 @allure.tag('API')
-@allure.story('Validate JSON scheme via API')
-@allure.title('Validate JSON scheme')
+@allure.story('Validate JSON scheme')
+@allure.title('Validate JSON scheme via API')
 @allure.severity(Severity.NORMAL)
-@allure.feature('Validate')
+@allure.feature('API')
 @allure.link('https://www.autodoc.ru/', name='Autodoc.ru')
 def test_validate_main_page_json_schema():
     url = os.getenv('JSON_API_URL')
@@ -18,10 +18,10 @@ def test_validate_main_page_json_schema():
 
 
 @allure.tag('API')
-@allure.story('Auth registered user via API')
-@allure.title('Auth registered user')
+@allure.story('Auth registered user')
+@allure.title('Auth registered user via API')
 @allure.severity(Severity.NORMAL)
-@allure.feature('Auth')
+@allure.feature('API')
 def test_authorization_user():
     registered_user = User(
         username=os.getenv('USER_LOGIN'),

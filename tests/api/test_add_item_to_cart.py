@@ -4,8 +4,8 @@ from autodoc_project.api.board_api import board_api
 
 @allure.feature('API')
 @allure.tag('API')
-@allure.story('Add item to cart via API')
-@allure.title('Add item to cart')
+@allure.story('Add item to cart')
+@allure.title('Add item to cart via API')
 @allure.severity(Severity.NORMAL)
 @allure.link('https://www.autodoc.ru/', name='Autodoc.ru')
 def test_add_item_to_cart():

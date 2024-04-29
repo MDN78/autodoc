@@ -8,10 +8,10 @@ from autodoc_project.pages.ui_pages.main_page import main_page
 class TestMainPage:
 
     @allure.tag('UI')
-    @allure.story('Checking authorization form via UI')
-    @allure.title('Registration form should have exact text')
+    @allure.feature('UI')
+    @allure.story('Checking authorization form')
+    @allure.title('Checking authorization form via UI')
     @allure.severity(Severity.NORMAL)
-    @allure.feature('Reg form check')
     @allure.link('https://www.autodoc.ru/', name='Autodoc.ru')
     def test_registration_form_should_have_exact_visible_text(self):
         main_page.open()

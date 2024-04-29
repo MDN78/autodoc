@@ -5,10 +5,10 @@ from autodoc_project.data.cars import Car
 from autodoc_project.api.board_api import board_api
 
 @allure.tag('API')
-@allure.story('Search item by WIN number via API')
-@allure.title('Search item by WIN number')
+@allure.story('Search item by WIN number')
+@allure.title('Search item by WIN number via API')
 @allure.severity(Severity.NORMAL)
-@allure.feature('Search check')
+@allure.feature('API')
 @allure.link('https://www.autodoc.ru/', name='Autodoc.ru')
 def test_search_by_vin_number():
     token = board_api.get_auth_token()
