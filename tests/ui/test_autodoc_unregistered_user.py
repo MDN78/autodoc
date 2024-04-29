@@ -6,10 +6,10 @@ from autodoc_project.pages.ui_pages.main_page import main_page
 
 
 @allure.tag('UI')
-@allure.story('Auth unregistered user via UI')
-@allure.title('Auth unregistered user')
+@allure.feature('UI')
+@allure.story('Auth unregistered user')
+@allure.title('Auth unregistered user via UI')
 @allure.severity(Severity.NORMAL)
-@allure.feature('Auth')
 @allure.link('https://www.autodoc.ru/', name='Autodoc.ru')
 def test_authorization_unregistered_user():
     main_page.open()
