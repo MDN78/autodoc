@@ -56,6 +56,13 @@ class MainPage:
         browser.element('.breadcrumbs-header').should(have.text(value))
 
     @step
+    @allure.step("UI-API: Search")
+    def search_item_by_tool_name_and_number(self, name, value):
+        browser.element('#partNumberSearch').should(be.blank).send_keys(name, value)
+        browser.element('.search-button').click()
+        browser.element('.sub-nav.promark.ng-star-inserted').should(have.text(name))
+
+    @step
     @allure.step("UI: Search by VIN number")
     def search_by_vin_number(self, car: Car):
         browser.element('[name=vin]').should(be.blank).send_keys(car.vin)
