@@ -125,6 +125,7 @@ allure serve
 Результат: откроется страница с отчетом Allure Report  
 
 В отчете так же будет доступно видео прохождения мобильного теста:  
+
 <img width="50%" title="Mobile" src="assets/mobile_test.gif">  
 ----
 
