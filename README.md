@@ -54,7 +54,7 @@
 
 
 > Для полноценного прохождения всех тестов должен быть или тестовый аккаунт на сайте ***Автодок*** или реальный, данные
-> которого нужно будет указывать в файле
+> которого нужно будет указывать в файлах
 `.env`
 >
 Для написания UI-тестов используется фреймворк `Selene`, современная «обёртка» вокруг `Selenium WebDriver`
@@ -119,7 +119,7 @@ pytest tests/mobile --context=local_emulator
 
 ----
 
-### <img width="3%" title="Jenkins" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg"> Удаленный запуск автотестов выполняется на сервере Jenkins
+### <img width="3%" title="Jenkins" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg"> Удаленный запуск автотестов UI и API выполняется на сервере Jenkins
 
 > <a target="_blank" href="https://jenkins.autotests.cloud/job/C10_MDN782007_autodoc/">Ссылка на проект в
 > Jenkins</a>
@@ -128,10 +128,10 @@ pytest tests/mobile --context=local_emulator
 
 ### Параметры сборки:
 
-`ENVIRONMENT` - определение среды сборки, по умолчанию `PROD`  
-`BROWSER NAME` - выбор браузера. По умолчанию выбран браузер Chrome. 
+`BROWSER NAME` - выбор браузера. По умолчанию выбран браузер Chrome.   
 `BROWSER VERSION` - выбор версии браузера. По умолчанию выбран браузер Chrome, версия 122  
-`COMMENT` - комментарий для получателя уведомления в Телеграмм
+`COMMENT` - комментарий для получателя уведомления в Телеграмм  
+`ENVIRONMENT` - определение среды сборки, по умолчанию `PROD`  
 
 Версии браузеров, используемые в данной сборке в `Jenkins` и `Selenoid`:
 
