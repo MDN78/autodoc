@@ -115,8 +115,15 @@ pytest tests/mobile --context=bstack
 ```commandline
 pytest tests/mobile --context=local_emulator
 ```
+5) Выполнить запрос на формирование отчета  
+   note: команда для Windows
 
-
+```commandline
+allure serve
+```
+Результат: откроется страница с отчетом Allure Report
+В отчете так же будет доступно видео прохождения мобильного теста:  
+<img width="50%" title="Mobile" src="assets/mobile_test.gif">  
 ----
 
 ### <img width="3%" title="Jenkins" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg"> Удаленный запуск автотестов выполняется на сервере Jenkins
@@ -165,8 +172,10 @@ pytest tests/mobile --context=local_emulator
 ![image](assets/allure_report_suits.PNG)
 
 ### <img width="3%" title="Allure testops" src="https://github.com/MDN78/MDN78/blob/main/assets/allure_testops.png"> Allure TestOps отчет
-
-![image](assets/allure_testops_report.PNG)   
+### Суммарный dashboard  
+![image](assets/allure_testops_report.PNG)    
+### Детально по test cases
+![image](assets/allure_testops_cases.PNG)  
 
 ### <img width="3%" title="Allure report" src="https://github.com/MDN78/MDN78/blob/main/assets/selenoid.png"> Видео прохождения теста:
 
