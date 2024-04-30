@@ -79,7 +79,8 @@
 
 ```commandline
 pytest tests\api 
-pytest tests\ui --browser_name=<BROWSER_NAME> --browser_version=<BROWSER_VERSION>
+pytest tests\ui --browser_name=<BROWSER_NAME> --browser_version=<BROWSER_VERSION>  
+pytest tests\ui_api --browser_name=<BROWSER_NAME> --browser_version=<BROWSER_VERSION>
 ```
       
 3) Выполнить запрос на формирование отчета  
