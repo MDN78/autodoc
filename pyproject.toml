@@ -27,6 +27,7 @@ testpaths = [
     "tests/api",
     "tests/mobile",
     "tests/ui",
+    "tests/ui_api",
 ]
 
 [build-system]
