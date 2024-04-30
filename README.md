@@ -129,7 +129,6 @@ allure serve
 
 <img width="50%" title="Mobile" src="assets/mobile_test.gif">  
 
-![](assets/mobile_test.gif)
 ----
 
 ### <img width="3%" title="Jenkins" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-original.svg"> Удаленный запуск автотестов выполняется на сервере Jenkins
