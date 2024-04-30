@@ -4,6 +4,7 @@ from allure_commons.types import Severity
 from autodoc_project.data.users import User
 from autodoc_project.pages.mobile_pages.main_page_mobile import android_main_page
 
+
 @allure.feature('Mobile')
 @allure.tag('MOBILE')
 @allure.story('Authorization')

@@ -4,6 +4,7 @@ import requests
 from utils import resource
 from jsonschema import validate
 
+
 @allure.step('API: validate JSON scheme')
 def validator_all_json_scheme(name, url):
     response = requests.get(url=url)

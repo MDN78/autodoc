@@ -1,5 +1,4 @@
 import allure
-from utils.logger import step
 from selene import browser, have
 from appium.webdriver.common.appiumby import AppiumBy
 

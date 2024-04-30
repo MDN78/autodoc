@@ -2,6 +2,7 @@ import allure
 from allure_commons.types import Severity
 from autodoc_project.api.board_api import board_api
 
+
 @allure.feature('API')
 @allure.tag('API')
 @allure.story('Add item to cart')

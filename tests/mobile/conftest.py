@@ -33,7 +33,6 @@ def mobile_management(context):
             options.set_capability('platformName', os.getenv('PLATFORM_NAME'))
             options.set_capability('app', resource.relative_from_root(os.getenv('APP')))
 
-        # browser.config.driver = webdriver.Remote(options.get_capability('remote_url'), options=options)
         if context == 'bstack':
             options.set_capability('remote_url', os.getenv('URL'))
             options.set_capability('deviceName', os.getenv('DEVICE_NAME'))
@@ -65,6 +64,3 @@ def mobile_management(context):
     if context == 'bstack':
         with step('Add video'):
             attach_mobile.add_video(browser)
-
-# запуск тестов pytest tests\mobile --context=local_emulator
-# pytest tests\mobile --context=bstack

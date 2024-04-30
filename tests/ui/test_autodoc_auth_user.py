@@ -19,6 +19,7 @@ def test_authorization_registered_user():
     )
     main_page.authorization_registered_user(registered_user)
 
+
 @allure.tag('UI')
 @allure.feature('UI')
 @allure.story('Checking authorization user')

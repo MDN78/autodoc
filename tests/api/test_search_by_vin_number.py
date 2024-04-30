@@ -4,6 +4,7 @@ from allure_commons.types import Severity
 from autodoc_project.data.cars import Car
 from autodoc_project.api.board_api import board_api
 
+
 @allure.tag('API')
 @allure.story('Search item by WIN number')
 @allure.title('Search item by WIN number via API')
