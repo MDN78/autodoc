@@ -177,7 +177,7 @@ allure serve
 ### <img width="3%" title="Allure testops" src="https://github.com/MDN78/MDN78/blob/main/assets/allure_testops.png"> Allure TestOps отчет  
 Полная статистика по прохождению тестпланов, отчёты и приложения к ним хранятся в Allure TestOps  
 
-![Ссылка на проект в AllureTestOps](https://allure.autotests.cloud/project/4198/dashboards)  (запрос доступа `admin@qa.guru`)  
+[Ссылка на проект в AllureTestOps](https://allure.autotests.cloud/project/4198/dashboards)  (запрос доступа `admin@qa.guru`)  
 
 ### Суммарный dashboard  
 ![image](assets/allure_testops_report.PNG)    
