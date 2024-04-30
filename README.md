@@ -185,6 +185,11 @@ allure serve
 ### Детально по test cases
 ![image](assets/allure_testops_cases.PNG)  
 
+### <img width="3%" title="Allure testops" src="https://github.com/MDN78/MDN78/blob/main/assets/jira.png"> Интеграция с Jira
+[Ссылка на проектв Jira](https://jira.autotests.cloud/browse/HOMEWORK-1203)  
+
+![](assets/jira_project.PNG)
+
 ### <img width="3%" title="Allure report" src="https://github.com/MDN78/MDN78/blob/main/assets/selenoid.png"> Видео прохождения теста:
 
 Видеозапись каждого теста генерируется с помощью `Selenoid` после успешного запуска контейнера c тестами в `Docker`.
