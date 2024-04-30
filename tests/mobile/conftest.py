@@ -10,7 +10,7 @@ from appium.options.android import UiAutomator2Options
 
 
 def pytest_addoption(parser):
-    parser.addoption('--context', default='bstack')
+    parser.addoption('--context', default='local_emulator')
 
 
 def pytest_configure(config):
