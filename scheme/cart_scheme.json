@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "items": {
+      "type": "array",
+      "items": {}
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "comment": {
+      "type": "string"
+    },
+    "conditions": {
+      "type": "string"
+    },
+    "checkByVin": {
+      "type": "boolean"
+    },
+    "promoToken": {
+      "type": "integer"
+    },
+    "promoIsActive": {
+      "type": "boolean"
+    },
+    "promoMessage": {
+      "type": "string"
+    },
+    "total": {
+      "type": "number"
+    },
+    "bonusTotal": {
+      "type": "number"
+    },
+    "discount": {
+      "type": "number"
+    },
+    "bonusActive": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "id",
+    "items",
+    "createdAt",
+    "comment",
+    "conditions",
+    "checkByVin",
+    "promoToken",
+    "promoIsActive",
+    "promoMessage",
+    "total",
+    "bonusTotal",
+    "discount",
+    "bonusActive"
+  ]
+}

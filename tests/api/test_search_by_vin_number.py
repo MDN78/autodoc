@@ -3,6 +3,7 @@ import allure
 from allure_commons.types import Severity
 from autodoc_project.data.cars import Car
 from autodoc_project.api.board_api import board_api
+from utils.validator_json import validator_json_scheme
 
 
 @allure.tag('API')
@@ -19,6 +20,6 @@ def test_search_by_vin_number():
         vin=os.getenv('VIN_NUMBER')
     )
     car_info = board_api.search_by_vin_number(car.vin, token)
-
+    validator_json_scheme(car_info[2], 'search_by_vin_number_scheme.json')
     assert car_info[0] == car.manufacturer
     assert car_info[1] == car.model
