@@ -47,7 +47,7 @@ def driver_configuration(request):
 
         browser.config.window_width = 1920
         browser.config.window_height = 1080
-        browser.config.base_url = "https://www.autodoc.ru/"
+        browser.config.base_url = "https://www.autodoc.ru"
 
         selenoid_capabilities = {
             "browserName": browser_name,
