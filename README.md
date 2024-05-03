@@ -109,6 +109,7 @@ allure serve
 ```commandline
 pytest tests/mobile --context=bstack
 ```
+![image](assets/browserstack_launch.PNG)
 
 Для запуска на локальной машине должен быть установлен и настроен эмулятор в `Android studio`  
 
