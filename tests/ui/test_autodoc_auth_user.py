@@ -1,7 +1,5 @@
-import os
 import allure
 from allure_commons.types import Severity
-from autodoc_project.data.users import User
 from autodoc_project.pages.ui_pages.main_page import main_page
 
 
