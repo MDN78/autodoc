@@ -33,6 +33,10 @@ class MainPage:
         browser.element('#Password').send_keys(user.password)
         browser.element('.icon.fa').click()
         browser.element('#submit_logon_page').click()
+
+    @step
+    @allure.step('UI: Check form unregistered user')
+    def check_error_message(self):
         browser.element('#errorMessage').should(have.exact_text('Не удалось авторизоваться.'))
 
     @step
