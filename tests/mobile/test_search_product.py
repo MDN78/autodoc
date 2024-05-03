@@ -18,3 +18,4 @@ def test_search_product():
     )
     android_main_page.authorization(registered_user.username, registered_user.password)
     android_main_page.search_product('ZIC', '132661')
+    android_main_page.page_should_have_text('ZIC')

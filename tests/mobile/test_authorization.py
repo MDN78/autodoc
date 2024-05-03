@@ -17,3 +17,4 @@ def test_authorization():
         password=os.getenv('USER_PASSWORD')
     )
     android_main_page.authorization(registered_user.username, registered_user.password)
+    android_main_page.main_page_should_have_text('Главная')

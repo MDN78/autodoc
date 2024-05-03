@@ -17,3 +17,4 @@ def test_add_item_to_cart():
     )
     android_main_page.authorization(registered_user.username, registered_user.password)
     android_main_page.add_item_to_cart('ZIC', '132661')
+    android_main_page.item_should_be_added_to_cart('ZIC', '132661')
