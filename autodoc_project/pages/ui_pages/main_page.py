@@ -13,13 +13,16 @@ class MainPage:
         browser.open("/")
 
     @step
-    @allure.step('UI: Authorization registered user')
     def authorization_registered_user(self, user: User):
-        browser.element('#loginInfo').click()
-        browser.element('#Login').should(be.blank).send_keys(user.username)
-        browser.element('#Password').should(be.blank).send_keys(user.password)
-        browser.element('.icon.fa').click()
-        browser.element('#submit_logon_page').click()
+        with allure.step('UI: Authorization registered user'):
+            browser.element('#loginInfo').click()
+            browser.element('#Login').should(be.blank).send_keys(user.username)
+            browser.element('#Password').should(be.blank).send_keys(user.password)
+            browser.element('.icon.fa').click()
+            browser.element('#submit_logon_page').click()
+
+    @step
+    def check_authorization_user(self, user: User):
         browser.element('#user_info').should(have.exact_text(user.username))
 
     @step

@@ -5,10 +5,18 @@ from utils import attach
 from selene import browser
 from selenium import webdriver
 from dotenv import load_dotenv
+from autodoc_project.data.users import User
 from selenium.webdriver import ChromeOptions
 from selenium.webdriver import FirefoxOptions
 
 DEFAULT_VERSION = '122.0'
+
+@pytest.fixture
+def registered_user():
+    return User(
+        username=os.getenv('USER_LOGIN'),
+        password=os.getenv('USER_PASSWORD')
+    )
 
 
 @allure.step('Select browser version')
