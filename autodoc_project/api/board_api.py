@@ -107,7 +107,6 @@ class BoardApi:
         url = base_url
         endpoint = 'shoppingcart/items'
         resp = requests.get(url + endpoint, headers=head)
-        response_logging(resp)
         return resp.json()
 
     @step
@@ -149,7 +148,6 @@ class BoardApi:
         response_logging(response)
         manufacturer = response.json()[0]['manufacturerName']
         partnumber = response.json()[0]['artNumber']
-
 
         return [manufacturer, partnumber, response.json(), response.status_code]
 
