@@ -8,9 +8,6 @@ from utils import attach_mobile
 from allure_commons._allure import step
 
 
-# from appium.options.android import UiAutomator2Options
-
-
 def pytest_addoption(parser):
     parser.addoption('--context', default='local_emulator')
 
