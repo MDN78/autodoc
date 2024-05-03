@@ -37,7 +37,7 @@ class TestMainPage:
     @allure.link('https://www.autodoc.ru/', name='Autodoc.ru')
     def test_main_page_should_have_exact_visible_text(self):
         main_page.open()
-        main_page.main_page_should_have_visible_text()
+        main_page.main_page_should_have_visible_text('Запчасти в интернет-магазине Автодок')
 
     @allure.tag('UI')
     @allure.feature('UI')
@@ -53,3 +53,4 @@ class TestMainPage:
             model=''
         )
         main_page.search_by_vin_number(current_car)
+        main_page.check_vin_search_result('Оригинальный каталог')

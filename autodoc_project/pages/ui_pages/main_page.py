@@ -78,12 +78,16 @@ class MainPage:
     def search_by_vin_number(self, car: Car):
         browser.element('[name=vin]').should(be.blank).send_keys(car.vin)
         browser.element('.btn-transparent').click()
-        browser.element('.breadcrumbs').should(have.text('Оригинальный каталог'))
+
+    @step
+    @allure.step("UI: Check research form by VIN number")
+    def check_vin_search_result(self, value):
+        browser.element('.breadcrumbs').should(have.text(value))
 
     @step
     @allure.step("UI: Checking phrase")
-    def main_page_should_have_visible_text(self):
-        browser.element('.homepage-content__title').should(have.exact_text('Запчасти в интернет-магазине Автодок'))
+    def main_page_should_have_visible_text(self, value):
+        browser.element('.homepage-content__title').should(have.exact_text(value))
 
     @step
     @allure.step("UI: Clear cart")
