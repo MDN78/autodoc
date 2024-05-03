@@ -11,6 +11,7 @@ from selenium.webdriver import FirefoxOptions
 
 DEFAULT_VERSION = '122.0'
 
+
 @pytest.fixture
 def registered_user():
     return User(
