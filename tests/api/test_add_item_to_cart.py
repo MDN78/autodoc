@@ -16,8 +16,12 @@ def test_add_item_to_cart(base_api_url):
     part_name = current_response['items'][0]['priceItem']['manufacturer']['name']
     part_number = current_response['items'][0]['priceItem']['partNumber']
     status_code = resp.status_code
-    assert status_code == 204
-    assert part_number == "132661"
-    assert part_name == "ZIC"
-    validator_json_scheme(current_response, 'cart_scheme.json')
+    with allure.step('Status code=204'):
+        assert status_code == 204
+    with allure.step('Check request - response'):
+        assert part_number == "132661"
+        assert part_name == "ZIC"
+    with allure.step('Schema is validate'):
+        validator_json_scheme(current_response, 'cart_scheme.json')
+
     board_api.clear_cart(token, base_api_url)

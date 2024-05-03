@@ -135,11 +135,11 @@ class BoardApi:
             'authorization': f'Bearer {my_token}'
         }
         response = requests.get(url=url, headers=head, data=payload)
-        status_code = response.status_code
-        assert status_code == 200
+        # status_code = response.status_code
+        # assert status_code == 200
         manufacturer = response.json()["commonAttributes"][2]['value']
         model = response.json()["commonAttributes"][6]['value']
-        return [manufacturer, model, response.json()]
+        return [manufacturer, model, response.json(), response.status_code]
 
     @step
     @allure.step('API: Search by title and number')

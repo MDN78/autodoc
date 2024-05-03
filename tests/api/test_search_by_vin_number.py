@@ -20,6 +20,11 @@ def test_search_by_vin_number():
         vin=os.getenv('VIN_NUMBER')
     )
     car_info = board_api.search_by_vin_number(car.vin, token)
-    validator_json_scheme(car_info[2], 'search_by_vin_number_scheme.json')
-    assert car_info[0] == car.manufacturer
-    assert car_info[1] == car.model
+
+    with allure.step('Status code=204'):
+        assert car_info[3] == 200
+    with allure.step('Check request - response'):
+        assert car_info[0] == car.manufacturer
+        assert car_info[1] == car.model
+    with allure.step('Schema is validate'):
+        validator_json_scheme(car_info[2], 'search_by_vin_number_scheme.json')

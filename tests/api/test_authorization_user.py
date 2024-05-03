@@ -17,8 +17,11 @@ def test_authorization_user(base_api_url):
         password=os.getenv('USER_PASSWORD')
     )
     resp = board_api.authorization_user(registered_user, base_api_url)
-    validator_json_scheme(resp[0], 'auth_scheme.json')
     status_code = resp[1]
     login = resp[2]
-    assert status_code == 200
-    assert login == registered_user.username
+    with allure.step('Status code=204'):
+        assert status_code == 200
+    with allure.step('Check request - response'):
+        assert login == registered_user.username
+    with allure.step('Schema is validate'):
+        validator_json_scheme(resp[0], 'auth_scheme.json')
