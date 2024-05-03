@@ -75,6 +75,10 @@ class MainPage:
     def search_item_by_tool_name_and_number(self, name, value):
         browser.element('#partNumberSearch').should(be.blank).send_keys(name, value)
         browser.element('.search-button').click()
+
+    @step
+    @allure.step("UI-API: Check search form")
+    def check_search_result(self, name):
         browser.element('.sub-nav.promark.ng-star-inserted').should(have.text(name))
 
     @step
