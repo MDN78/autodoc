@@ -84,7 +84,6 @@ pytest tests\ui_api --browser_name=<BROWSER_NAME> --browser_version=<BROWSER_VER
 ```
       
 3) Выполнить запрос на формирование отчета  
-4) 
    note: команда для Windows
 
 ```commandline
