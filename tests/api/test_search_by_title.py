@@ -10,8 +10,9 @@ from utils.validator_json import validator_json_scheme
 @allure.severity(Severity.NORMAL)
 @allure.feature('API')
 @allure.link('https://www.autodoc.ru/', name='Autodoc.ru')
-def test_search_by_title_and_number():
-    resp = board_api.search_by_title_and_number('ZIC', '132661')
+def test_search_by_title_and_number(base_api_url):
+    resp = board_api.search_by_title_and_number('ZIC', '132661', base_api_url)
     validator_json_scheme(resp, 'search_scheme.json')
     assert resp[0] == 'ZIC'
     assert resp[1] == '132661'
+    assert resp[3] == 200

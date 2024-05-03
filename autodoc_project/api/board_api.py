@@ -87,9 +87,9 @@ class BoardApi:
             "priceType": 1
         }
         response = requests.post(url + endpoint, headers=head, data=payload)
-        status_code = response.status_code
-        assert status_code == 204
-        print(response.text)
+        # status_code = response.status_code
+        # assert status_code == 204
+        return response
 
 
     def get_json_scheme(self, base_url):
@@ -151,9 +151,9 @@ class BoardApi:
         }
         response = requests.get(url + endpoint, params=param)
         manufacturer = response.json()[0]['manufacturerName']
-        artnumber = response.json()[0]['artNumber']
+        partnumber = response.json()[0]['artNumber']
 
-        return [manufacturer, artnumber, response.json()]
+        return [manufacturer, partnumber, response.json(), response.status_code]
 
 
 board_api = BoardApi()
