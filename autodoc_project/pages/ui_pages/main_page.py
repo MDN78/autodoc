@@ -41,10 +41,14 @@ class MainPage:
         browser.element('#user_info').should(have.exact_text(user))
 
     @step
-    @allure.step("UI: Checking authorization form")
-    def registration_form_should_have_exact_visible_text(self):
+    @allure.step("UI: Go to authorization form")
+    def registration_form(self):
         browser.element('.registration').click()
-        browser.element('.title').should(have.text('Регистрация пользователя'))
+
+    @step
+    @allure.step("UI: Checking authorization form")
+    def registration_form_should_have_exact_visible_text(self, value):
+        browser.element('.title').should(have.text(value))
 
     @step
     @allure.step("UI: Checking balance form")
@@ -56,6 +60,10 @@ class MainPage:
     def search_item_by_tool_number(self, value):
         browser.element('#partNumberSearch').should(be.blank).send_keys(value)
         browser.element('.search-button').click()
+
+    @step
+    @allure.step("UI: Checking search form")
+    def check_search_form(self, value):
         browser.element('.breadcrumbs-header').should(have.text(value))
 
     @step

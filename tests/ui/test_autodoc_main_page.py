@@ -15,7 +15,8 @@ class TestMainPage:
     @allure.link('https://www.autodoc.ru/', name='Autodoc.ru')
     def test_registration_form_should_have_exact_visible_text(self):
         main_page.open()
-        main_page.registration_form_should_have_exact_visible_text()
+        main_page.registration_form()
+        main_page.registration_form_should_have_exact_visible_text('Регистрация пользователя')
 
     @allure.tag('UI')
     @allure.feature('UI')
@@ -26,6 +27,7 @@ class TestMainPage:
     def test_search_form_by_item_number(self):
         main_page.open()
         main_page.search_item_by_tool_number('ZIC 132661')
+        main_page.check_search_form('ZIC 132661')
 
     @allure.tag('UI')
     @allure.feature('UI')
