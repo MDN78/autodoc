@@ -1,6 +1,4 @@
-import os
 import pytest
-from utils import resource
 from selene import browser
 from appium import webdriver
 from dotenv import load_dotenv
