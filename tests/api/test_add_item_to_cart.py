@@ -3,6 +3,7 @@ from allure_commons.types import Severity
 from autodoc_project.api.board_api import board_api
 from utils.validator_json import validator_json_scheme
 
+
 @allure.feature('API')
 @allure.tag('API')
 @allure.story('Add item to cart')
