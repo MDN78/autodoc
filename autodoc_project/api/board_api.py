@@ -3,6 +3,7 @@ import allure
 import requests
 from utils.logger import step
 from dotenv import load_dotenv
+from utils.logger import response_logging
 from autodoc_project.data.users import User
 
 load_dotenv()
@@ -23,6 +24,7 @@ class BoardApi:
             'content-type': 'application/x-www-form-urlencoded',
         }
         response = requests.post('https://auth.autodoc.ru/token', data=payload, headers=headers)
+        response_logging(response)
         my_token = response.json()['access_token']
         return my_token
 
@@ -52,6 +54,7 @@ class BoardApi:
                 'authorization': f'Bearer {my_token}'
             }
             resp = requests.get(url=url + endpoit, params=param, headers=head)
+            response_logging(resp)
             login = resp.json()['login']
         return [resp.json(), status_code, login]
 
@@ -104,6 +107,7 @@ class BoardApi:
         url = base_url
         endpoint = 'shoppingcart/items'
         resp = requests.get(url + endpoint, headers=head)
+        response_logging(resp)
         return resp.json()
 
     @step
@@ -128,6 +132,7 @@ class BoardApi:
             'authorization': f'Bearer {my_token}'
         }
         response = requests.get(url=url, headers=head, data=payload)
+        response_logging(response)
         manufacturer = response.json()["commonAttributes"][2]['value']
         model = response.json()["commonAttributes"][6]['value']
         return [manufacturer, model, response.json(), response.status_code]
@@ -141,8 +146,10 @@ class BoardApi:
             'showAll': False
         }
         response = requests.get(url + endpoint, params=param)
+        response_logging(response)
         manufacturer = response.json()[0]['manufacturerName']
         partnumber = response.json()[0]['artNumber']
+
 
         return [manufacturer, partnumber, response.json(), response.status_code]
 
