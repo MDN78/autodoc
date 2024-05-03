@@ -5,7 +5,6 @@ from utils.logger import step
 from dotenv import load_dotenv
 from autodoc_project.data.users import User
 
-
 load_dotenv()
 
 
@@ -28,34 +27,32 @@ class BoardApi:
         return my_token
 
     @step
-    @allure.step('API: authorization user via API')
     def authorization_user(self, user: User, base_url):
-        payload = {
-            'username': user.username,
-            'password': user.password,
-            'grant_type': 'password'
-        }
-        headers = {
-            'authorization': 'Bearer',
-            'content-type': 'application/x-www-form-urlencoded',
-        }
-        response = requests.post('https://auth.autodoc.ru/token', data=payload, headers=headers)
-        my_token = response.json()['access_token']
-        # token_type = response.json()['token_type']
-        status_code = response.status_code
-        # assert status_code == 200
+        with allure.step('Get auth token'):
+            payload = {
+                'username': user.username,
+                'password': user.password,
+                'grant_type': 'password'
+            }
+            headers = {
+                'authorization': 'Bearer',
+                'content-type': 'application/x-www-form-urlencoded',
+            }
+            response = requests.post('https://auth.autodoc.ru/token', data=payload, headers=headers)
+            my_token = response.json()['access_token']
+            status_code = response.status_code
+        with allure.step('Authorization user'):
+            url = base_url
+            endpoit = 'client/profile'
 
-        url = base_url
-        endpoit = 'client/profile'
-
-        param = {
-            'withUpdate': True
-        }
-        head = {
-            'authorization': f'Bearer {my_token}'
-        }
-        resp = requests.get(url=url + endpoit, params=param, headers=head)
-        login = resp.json()['login']
+            param = {
+                'withUpdate': True
+            }
+            head = {
+                'authorization': f'Bearer {my_token}'
+            }
+            resp = requests.get(url=url + endpoit, params=param, headers=head)
+            login = resp.json()['login']
         return [resp.json(), status_code, login]
 
     @step
@@ -87,10 +84,7 @@ class BoardApi:
             "priceType": 1
         }
         response = requests.post(url + endpoint, headers=head, data=payload)
-        # status_code = response.status_code
-        # assert status_code == 204
         return response
-
 
     def get_json_scheme(self, base_url):
         payload = {
@@ -111,7 +105,6 @@ class BoardApi:
         endpoint = 'shoppingcart/items'
         resp = requests.get(url + endpoint, headers=head)
         return resp.json()
-
 
     @step
     @allure.step('API: Clear cart')
@@ -135,8 +128,6 @@ class BoardApi:
             'authorization': f'Bearer {my_token}'
         }
         response = requests.get(url=url, headers=head, data=payload)
-        # status_code = response.status_code
-        # assert status_code == 200
         manufacturer = response.json()["commonAttributes"][2]['value']
         model = response.json()["commonAttributes"][6]['value']
         return [manufacturer, model, response.json(), response.status_code]
