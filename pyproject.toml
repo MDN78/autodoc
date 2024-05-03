@@ -15,6 +15,8 @@ requests = "2.31.0"
 jsonschema = "4.21.1"
 appium-python-client = "4.0.0"
 curlify = "^2.2.1"
+pydantic-settings = "^2.2.1"
+pydantic = "2.6.4"
 
 [tool.pytest.ini_options]
 addopts = [

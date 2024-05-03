@@ -6,7 +6,7 @@ from appium import webdriver
 from dotenv import load_dotenv
 from utils import attach_mobile
 from allure_commons._allure import step
-from appium.options.android import UiAutomator2Options
+# from appium.options.android import UiAutomator2Options
 
 
 def pytest_addoption(parser):
@@ -27,29 +27,32 @@ def context(request):
 @pytest.fixture(scope='function', autouse=True)
 def mobile_management(context):
     with step('Configurate options'):
-        options = UiAutomator2Options()
-        if context == 'local_emulator':
-            options.set_capability('remote_url', os.getenv('URL'))
-            options.set_capability('platformName', os.getenv('PLATFORM_NAME'))
-            options.set_capability('app', resource.relative_from_root(os.getenv('APP')))
-
-        if context == 'bstack':
-            options.set_capability('remote_url', os.getenv('URL'))
-            options.set_capability('deviceName', os.getenv('DEVICE_NAME'))
-            options.set_capability('platformName', os.getenv('PLATFORM_NAME'))
-            options.set_capability('platformVersion', os.getenv('PLATFORM_VERSION'))
-            options.set_capability('app', os.getenv('APP_M'))
-            options.set_capability(
-                'bstack:options',
-                {
-                    "projectName": "First Python project",
-                    "buildName": "browserstack-build-1",
-                    "sessionName": "BStack first_test",
-                    "userName": os.getenv('USER_NAME'),
-                    "accessKey": os.getenv('ACCESS_KEY'),
-                },
-            )
-    browser.config.driver = webdriver.Remote(options.get_capability('remote_url'), options=options)
+        from project import config_app
+        options = config_app.to_driver_options(context=context)
+        browser.config.driver = webdriver.Remote(options.get_capability('remote_url'), options=options)
+    #     options = UiAutomator2Options()
+    #     if context == 'local_emulator':
+    #         options.set_capability('remote_url', os.getenv('URL'))
+    #         options.set_capability('platformName', os.getenv('PLATFORM_NAME'))
+    #         options.set_capability('app', resource.relative_from_root(os.getenv('APP')))
+    #
+    #     if context == 'bstack':
+    #         options.set_capability('remote_url', os.getenv('URL'))
+    #         options.set_capability('deviceName', os.getenv('DEVICE_NAME'))
+    #         options.set_capability('platformName', os.getenv('PLATFORM_NAME'))
+    #         options.set_capability('platformVersion', os.getenv('PLATFORM_VERSION'))
+    #         options.set_capability('app', os.getenv('APP_M'))
+    #         options.set_capability(
+    #             'bstack:options',
+    #             {
+    #                 "projectName": "First Python project",
+    #                 "buildName": "browserstack-build-1",
+    #                 "sessionName": "BStack first_test",
+    #                 "userName": os.getenv('USER_NAME'),
+    #                 "accessKey": os.getenv('ACCESS_KEY'),
+    #             },
+    #         )
+    # browser.config.driver = webdriver.Remote(options.get_capability('remote_url'), options=options)
     yield
 
     with step('Add screenshot'):
